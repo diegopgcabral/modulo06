@@ -27,7 +27,7 @@ export const Input = styled.TextInput.attrs({
 export const SubmitButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
-  background: #7159c1;
+  background: #00002b;
   border-radius: 4px;
   margin-left: 10px;
   padding: 0 12px;
@@ -70,14 +70,19 @@ export const Bio = styled.Text.attrs({
   text-align: center;
 `;
 
+export const UserActionButtons = styled.View`
+  flex-direction: row;
+`;
+
 export const ProfileButton = styled(RectButton)`
   margin: 10px;
   align-self: stretch;
   border-radius: 4px;
-  background: #7159c1;
+  background-color: #c2ea00;
   justify-content: center;
   align-items: center;
   height: 36px;
+  width: 120px;
 `;
 
 export const ProfileButtonText = styled.Text`
@@ -85,4 +90,14 @@ export const ProfileButtonText = styled.Text`
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
+`;
+
+export const DeleteButton = styled(RectButton)`
+  background-color: #f30058;
+  height: 36px;
+  width: 50px;
+  border-radius: 4px;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
 `;

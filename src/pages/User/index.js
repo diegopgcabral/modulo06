@@ -96,12 +96,12 @@ export default class User extends Component {
           <Loading />
         ) : (
           <Stars
-            data={stars}
-            keyExtractor={star => String(star.id)}
             onEndReachedThreshold={0.2}
             onEndReached={this.getNextPage}
             onRefresh={this.refreshList}
             refreshing={refreshing}
+            data={stars}
+            keyExtractor={star => String(star.id)}
             renderItem={({item}) => (
               <Starred onPress={() => this.handleNavigate(item)}>
                 <OwnerAvatar source={{uri: item.owner.avatar_url}} />

@@ -36,6 +36,16 @@ export const Bio = styled.Text`
   text-align: center;
 `;
 
+export const Loading = styled.ActivityIndicator.attrs({
+  color: '#00002B',
+  size: 45,
+})`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+`;
+
 export const Stars = styled.FlatList.attrs({
   showsVerticalScrollIndicator: false,
 })`
@@ -75,14 +85,4 @@ export const Author = styled.Text`
   font-size: 13px;
   color: #666;
   margin-top: 2px;
-`;
-
-export const Loading = styled.ActivityIndicator.attrs({
-  color: '#7159c1',
-  size: 45,
-})`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
 `;

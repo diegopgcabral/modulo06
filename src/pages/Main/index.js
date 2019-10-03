@@ -19,6 +19,8 @@ import {
   Bio,
   ProfileButton,
   ProfileButtonText,
+  UserActionButtons,
+  DeleteButton,
 } from './styles';
 
 export default class Main extends Component {
@@ -83,6 +85,15 @@ export default class Main extends Component {
     navigation.navigate('User', {user});
   };
 
+  handleDelete = user => {
+    const {users} = this.state;
+    const filteredUsers = users.filter(item => item !== user);
+
+    this.setState({
+      users: [...filteredUsers],
+    });
+  };
+
   render() {
     const {users, newUser, loading} = this.state;
     return (
@@ -113,10 +124,14 @@ export default class Main extends Component {
               <Avatar source={{uri: item.avatar}} />
               <Name>{item.name}</Name>
               <Bio>{item.bio}</Bio>
-
-              <ProfileButton onPress={() => this.handleNavigate(item)}>
-                <ProfileButtonText>Ver Perfil</ProfileButtonText>
-              </ProfileButton>
+              <UserActionButtons>
+                <ProfileButton onPress={() => this.handleNavigate(item)}>
+                  <ProfileButtonText>Ver Perfil</ProfileButtonText>
+                </ProfileButton>
+                <DeleteButton onPress={() => this.handleDelete(item)}>
+                  <Icon name="delete-forever" size={20} color="#fff" />
+                </DeleteButton>
+              </UserActionButtons>
             </User>
           )}
         />

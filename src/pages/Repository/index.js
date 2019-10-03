@@ -1,11 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Browser} from './styles';
+import {Browser, Loading} from './styles';
 
 export default function Repository({navigation}) {
   const repository = navigation.getParam('repository');
-  return <Browser source={{uri: repository.html_url}} />;
+  return (
+    <Browser
+      source={{uri: repository.html_url}}
+      startInLoadingState
+      renderLoading={() => <Loading />}
+    />
+  );
 }
 
 Repository.propTypes = {
