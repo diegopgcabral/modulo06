@@ -11,7 +11,7 @@ import {
   Name,
   Stars,
   Starred,
-  OnwerAvatar,
+  OwnerAvatar,
   Info,
   Title,
   Author,
@@ -104,7 +104,7 @@ export default class User extends Component {
             refreshing={refreshing}
             renderItem={({item}) => (
               <Starred onPress={() => this.handleNavigate(item)}>
-                <OnwerAvatar source={{uri: item.owner.avatar_url}} />
+                <OwnerAvatar source={{uri: item.owner.avatar_url}} />
                 <Info>
                   <Title>{item.name}</Title>
                   <Author>{item.owner.login}</Author>
